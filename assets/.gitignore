@@ -7,7 +7,7 @@
 /.pnp
 .pnp.js
 .history
-.idea
+.vscode
 
 # testing
 /coverage

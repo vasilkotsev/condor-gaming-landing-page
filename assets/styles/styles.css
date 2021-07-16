@@ -22,13 +22,16 @@ body {
   border-radius: 30px;
   font-size: 1.125rem;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1;
   color: #ffffff;
   background: #187bd8;
+  cursor: pointer;
 }
 
 .primary-button:hover {
   color: #ffffff;
+  background: #1361aa;
+  text-decoration: none;
 }
 
 .section-title {
@@ -80,6 +83,7 @@ body {
   width: 100%;
   margin: 0px;
   padding: 1.1rem 0;
+  background: #ffffff;
 }
 
 #header .content_wrapper {
@@ -243,19 +247,55 @@ body {
   height: auto;
 }
 
+/* End of About us section styles*/
+/* Section Address styles */
+#section-address {
+  background: #ffffff;
+}
+
+#section-address .google-maps-container {
+  padding: 1.25rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+#section-address .google-maps-container .google-maps {
+  width: 100% !important;
+}
+
+#section-address .address-text-container {
+  min-height: 320px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+}
+
+#section-address .address-text-container #address {
+  padding-top: 2rem;
+}
+
+#section-address .address-text-container #address p {
+  padding-top: 10px;
+  font-size: 1.25rem;
+}
+
+#section-address .address-text-container #address p dfn {
+  font-weight: bold;
+}
+
 /* Section Contacts styles */
 #contacts {
   background: url(../images/map-background.jpg) no-repeat center center;
   background-size: cover;
-  min-height: 676px;
 }
 
-#contacts h2 {
-  color: #323232;
-}
-
-#contacts h3 {
-  margin-bottom: 75px;
+#contacts .section-title,
+#contacts .section-subtitle {
+  color: #ffffff;
+  text-align: center;
 }
 
 #contacts form {
@@ -267,29 +307,16 @@ body {
   flex-flow: row wrap;
   justify-content: space-between;
   width: 100%;
+  padding-top: 2.5rem;
+}
+
+#contacts .form-wrapper {
+  width: 100%;
 }
 
 #contacts fieldset {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  flex-flow: column wrap;
-  max-width: 455px;
   width: 100%;
-  min-height: 213px;
-  justify-content: space-between;
   margin-bottom: 33px;
-}
-
-#contacts .primary_button {
-  border: none;
-  font-size: 1.125rem;
-  padding: 20px 43px;
-  border-radius: 3px;
-  margin: 0 20px;
-  box-sizing: border-box;
 }
 
 #contacts .button {
@@ -300,7 +327,7 @@ body {
   align-items: center;
 }
 
-#contacts input,
+#contacts input[type="text"],
 #contacts textarea {
   font-size: 14px;
   padding: 15px;
@@ -317,14 +344,25 @@ body {
 }
 
 #contacts textarea[name="yourmessage"] {
-  height: 100%;
-  min-height: 211px;
+  min-height: 207px;
   width: 100%;
-  resize: none;
-  overflow-y: auto;
+}
+
+#contacts input[type="submit"] {
+  border: none;
 }
 
 /* End of section Contacts styles */
+/* Footer styles */
+#footer {
+  padding: 2rem;
+  background: #e8f4f6;
+}
+
+#footer .content-footer {
+  text-align: center;
+}
+
 /* scrolling functionality styles for header */
 .header-fixed {
   background-color: #ffffff;
@@ -549,6 +587,9 @@ body {
   #portfolio .brand-logo-box .brand-link {
     width: 55%;
     margin: auto;
+  }
+  #section-address .address-text-container {
+    min-height: initial;
   }
   #footer .content_wrapper {
     justify-content: center;

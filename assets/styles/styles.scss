@@ -7,6 +7,7 @@ $secondary-color: #b8272f;
 $third-color: #c83691;
 $primary-font-color: #323232;
 $alternative-font-color: #6b4895;
+$primary-button-color: #187bd8;
 
 @mixin display-flex-prefix-properties {
   display: -webkit-box;
@@ -46,12 +47,15 @@ body {
   border-radius: 30px;
   font-size: 1.125rem;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1;
   color: $primary-color;
-  background: #187bd8;
+  background: $primary-button-color;
+  cursor: pointer;
 
   &:hover {
     color: $primary-color;
+    background: darken($color: #187bd8, $amount: 10%);
+    text-decoration: none;
   }
 }
 
@@ -97,6 +101,7 @@ body {
   width: 100%;
   margin: 0px;
   padding: 1.1rem 0;
+  background: $primary-color;
 
   .content_wrapper {
     @include display-flex-prefix-properties;
@@ -238,18 +243,50 @@ body {
   }
 }
 
+/* End of About us section styles*/
+
+/* Section Address styles */
+
+#section-address {
+  background: $primary-color;
+
+  .google-maps-container {
+    padding: 1.25rem 0;
+    display: flex;
+    justify-content: center;
+    .google-maps {
+      width: 100% !important;
+    }
+  }
+
+  .address-text-container {
+    min-height: 320px;
+    @include display-flex-prefix-properties;
+    align-items: center;
+    #address {
+      padding-top: 2rem;
+
+      p {
+        padding-top: 10px;
+        font-size: 1.25rem;
+
+        dfn {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
 /* Section Contacts styles */
 #contacts {
   background: url(../images/map-background.jpg) no-repeat center center;
   background-size: cover;
-  min-height: 676px;
 
-  h2 {
-    color: $primary-font-color;
-  }
-
-  h3 {
-    margin-bottom: 75px;
+  .section-title,
+  .section-subtitle {
+    color: $primary-color;
+    text-align: center;
   }
 
   form {
@@ -257,26 +294,16 @@ body {
     flex-flow: row wrap;
     justify-content: space-between;
     width: 100%;
+    padding-top: 2.5rem;
+  }
+
+  .form-wrapper {
+    width: 100%;
   }
 
   fieldset {
-    @include display-flex-prefix-properties;
-    flex-flow: column wrap;
-    max-width: 455px;
     width: 100%;
-    min-height: 213px;
-    justify-content: space-between;
     margin-bottom: 33px;
-  }
-
-  .primary_button {
-    border: none;
-    // color: $third-font-color;
-    font-size: 1.125rem;
-    padding: 20px 43px;
-    border-radius: 3px;
-    margin: 0 20px;
-    box-sizing: border-box;
   }
 
   .button {
@@ -287,7 +314,7 @@ body {
     align-items: center;
   }
 
-  input,
+  input[type="text"],
   textarea {
     font-size: 14px;
     padding: 15px;
@@ -304,15 +331,27 @@ body {
   }
 
   textarea[name="yourmessage"] {
-    height: 100%;
-    min-height: 211px;
+    min-height: 207px;
     width: 100%;
-    resize: none;
-    overflow-y: auto;
+  }
+
+  input[type="submit"] {
+    border: none;
   }
 }
 
 /* End of section Contacts styles */
+
+/* Footer styles */
+
+#footer {
+  padding: 2rem;
+  background: $secondary-background-color;
+
+  .content-footer {
+    text-align: center;
+  }
+}
 
 /* scrolling functionality styles for header */
 .header-fixed {
@@ -600,6 +639,12 @@ body {
         width: 55%;
         margin: auto;
       }
+    }
+  }
+
+  #section-address {
+    .address-text-container {
+      min-height: initial;
     }
   }
 

@@ -35,4 +35,15 @@ $(document).ready(function () {
       logo.removeClass("logo-fixed");
       hamburger.removeClass("hamburger--stand is-active");
     });
+
+  /* scroll to top */
+  $(".scroll-top").click(function () {
+    $("html, body").animate(
+      {
+        scrollTop: 0,
+      },
+      "slow"
+    );
+    return false;
+  });
 });
